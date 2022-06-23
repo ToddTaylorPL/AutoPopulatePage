@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AutoPopulatePage.MainPage"
+             Title="Auto Populate Test">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+                
+            <Label 
+                Text="Auto Populate Details Page"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            
+            <Label Text="Leave blank to return all Monkeys, enter monkey name i.e. 'Blue Monkey' to filter the list"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Entry x:Name="MonkeyNameFilter"
+                   Placeholder="Monkey Name to filter"
+                   Text="{Binding Monkey.Name}"
+                   WidthRequest="300"/>
+
+            <Button 
+                x:Name="OpenDetailsNoFilter"
+                Text="Open Details"
+                HorizontalOptions="Center"
+                Command="{Binding GoToDetailsPageCommand}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+ 
+</ContentPage>

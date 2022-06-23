@@ -1,0 +1,12 @@
+﻿global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
+global using AutoPopulatePage.Models;
+global using AutoPopulatePage.ViewModels;
+global using AutoPopulatePage.Views;
+global using AutoPopulatePage.Services;
+global using System.Collections.ObjectModel;
+global using System.ComponentModel;
+global using System.Diagnostics;
+global using System.Runtime.CompilerServices;
+global using System.Text.Json;
+global using System.Net.Http.Json;
