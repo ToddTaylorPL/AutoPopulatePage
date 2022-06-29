@@ -26,16 +26,16 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Entry x:Name="MonkeyNameFilter"
+            <!--<Entry x:Name="MonkeyNameFilter"
                    Placeholder="Monkey Name to filter"
                    Text="{Binding Monkey.Name}"
-                   WidthRequest="300"/>
+                   WidthRequest="300"/>-->
 
             <Button 
                 x:Name="OpenDetailsNoFilter"
                 Text="Open Details"
                 HorizontalOptions="Center"
-                Command="{Binding GoToDetailsPageCommand}"/>
+                    Command="{Binding GoToFieldAssignedWbsPageCommand}"/>
 
         </VerticalStackLayout>
     </ScrollView>

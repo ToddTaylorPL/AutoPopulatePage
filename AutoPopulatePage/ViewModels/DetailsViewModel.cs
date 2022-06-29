@@ -2,13 +2,17 @@
 namespace AutoPopulatePage.ViewModels;
 
 [QueryProperty(nameof(Monkey), nameof(Monkey))]
+[QueryProperty(nameof(User), nameof(User))]
 public partial class DetailsViewModel : BaseViewModel
 {
+
+    [ObservableProperty]
+    User user;
+
     [ObservableProperty]
     Monkey monkey;
 
     MonkeyService monkeyService;
-
     public ObservableCollection<Monkey> MonkeyList { get; set; } = new();
 
     public DetailsViewModel(MonkeyService monkeyService)
@@ -25,12 +29,7 @@ public partial class DetailsViewModel : BaseViewModel
         {
             IsBusy = true;
 
-            // The following will run with param set to "No Param" to demonstrate the code will return records.
-            // viewModel.GetFieldAssignedWbsListCommand.Execute(null);
-            // must be run under "public DetailsPage". 
-            //var monkeyList = await monkeyService.GetMonkeys("No Param");
-
-            // This should run after the page is navigated to and the "Monkey" Model Param is passed and set.
+            // This passes the Parameter from the "From" Page to the MonkeyService to retrieve the data.  
             var monkeyList = await monkeyService.GetMonkeys(Monkey.Name);
 
             if (MonkeyList.Count != 0)
