@@ -1,27 +1,20 @@
-﻿
 namespace AutoPopulatePage.ViewModels;
 
 [QueryProperty(nameof(Monkey), nameof(Monkey))]
-[QueryProperty(nameof(User), nameof(User))]
-public partial class DetailsViewModel : BaseViewModel
+public partial class MonkeyDNViewModel : BaseViewModel
 {
-
-    [ObservableProperty]
-    User user;
-
     [ObservableProperty]
     Monkey monkey;
-
     MonkeyService monkeyService;
     public ObservableCollection<Monkey> MonkeyList { get; set; } = new();
 
-    public DetailsViewModel(MonkeyService monkeyService)
+    public MonkeyDNViewModel(MonkeyService monkeyService)
     {
         this.monkeyService = monkeyService;
     }
 
     [RelayCommand]
-    async Task GetMonkeysAsync()
+    async Task GetMonkeysDNAsync()
     {
         if (IsBusy)
             return;
@@ -30,7 +23,10 @@ public partial class DetailsViewModel : BaseViewModel
             IsBusy = true;
 
             // This passes the Parameter from the "From" Page to the MonkeyService to retrieve the data.  
-            var monkeyList = await monkeyService.GetMonkeys(Monkey.Name);
+            if (monkey.Name is null)
+                monkey.Name = "All";
+
+            var monkeyList = await monkeyService.GetMonkeysDN("All");
 
             if (MonkeyList.Count != 0)
                 MonkeyList.Clear();
@@ -49,5 +45,4 @@ public partial class DetailsViewModel : BaseViewModel
             IsBusy = false;
         }
     }
-
 }

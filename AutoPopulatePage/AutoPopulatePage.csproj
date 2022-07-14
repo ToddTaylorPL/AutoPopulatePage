@@ -50,19 +50,26 @@
 
 	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview4" />
+	  <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Views\FieldAssignedWbsPage.xaml.cs">
-	    <DependentUpon>FieldAssignedWbsPage.xaml</DependentUpon>
+	  <Compile Update="Views\MonkeyDNPage.xaml.cs">
+	    <DependentUpon>MonkeyDNPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\MonkeyGHPage.xaml.cs">
+	    <DependentUpon>MonkeyGHPage.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\DetailsPage.xaml">
+	  <MauiXaml Update="Views\LocalDbPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Views\FieldAssignedWbsPage.xaml">
+	  <MauiXaml Update="Views\MonkeyDNPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\MonkeyGHPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

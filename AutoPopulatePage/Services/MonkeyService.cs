@@ -11,37 +11,28 @@ public class MonkeyService
     }
 
     List<Monkey> monkeyList;
-    public async Task<List<Monkey>> GetMonkeys(string name)
+    
+    public async Task<List<Monkey>> GetMonkeysGH()
     {
         if (monkeyList?.Count > 0)
             return monkeyList;
 
-        // Online
-        var response = await httpClient.GetAsync("https://www.montemagno.com/monkeys.json");
+        string url = "https://www.montemagno.com/monkeys.json";
+
+        var response = await httpClient.GetAsync(url);
         if (response.IsSuccessStatusCode)
         {
             monkeyList = await response.Content.ReadFromJsonAsync<List<Monkey>>();
         }
 
-        // Since the above Web Service does not accept paramters this is to simulate passing / filtering on a parameter.
-       // if (name is null)
             return monkeyList;
-        //else
-        //return monkeyList.FindAll(x => x.Name == name);
     }
-    public async Task<List<Monkey>> GetMonkeys2(string monkeyName)
+
+    public async Task<List<Monkey>> GetMonkeysDN(string monkeyName)
     {
-        string url;
-
-        if (DeviceInfo.Current.Platform == DevicePlatform.Android)
-        {
-            url = "http://10.0.2.2:45456/Monkey?MonkeyName=" + monkeyName;
-        }
-        else
-        {
-            url = "https://192.168.1.66:45456/Monkey?MonkeyName=" + monkeyName;
-        }
-
+        //string url;
+        string url = "https://apitrackmate.azurewebsites.net/Monkeys?MonkeyName=" + monkeyName;
+        
         var response = await httpClient.GetAsync(url);
 
         if (response.IsSuccessStatusCode)

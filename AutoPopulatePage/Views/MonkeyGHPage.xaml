@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AutoPopulatePage.Views.DetailsPage"
+             x:Class="AutoPopulatePage.Views.MonkeyGHPage"
              xmlns:models="clr-namespace:AutoPopulatePage.Models"
              xmlns:viewmodels="clr-namespace:AutoPopulatePage.ViewModels"
-             x:DataType="viewmodels:DetailsViewModel"
-             Title="Details Page">
+             x:DataType="viewmodels:MonkeyGHViewModel"
+             Title="GitHub Web Serivce">
   
     <Grid ColumnDefinitions="500"
           RowDefinitions="20, *"

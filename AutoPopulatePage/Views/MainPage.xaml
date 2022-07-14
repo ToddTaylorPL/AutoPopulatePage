@@ -32,10 +32,20 @@
                    WidthRequest="300"/>-->
 
             <Button 
-                x:Name="OpenDetailsNoFilter"
-                Text="Open Details"
+                x:Name="OpenMonkeyGHPage"
+                Text="Open Monkey's - GitHub Web Service"
                 HorizontalOptions="Center"
-                    Command="{Binding GoToFieldAssignedWbsPageCommand}"/>
+                    Command="{Binding GoToMonkeyGHPageCommand}"/>
+
+            <Button x:Name="OpenMonkeyDNPage"
+                    Text="Open Monkey's - .Net Web Service"
+                    HorizontalOptions="Center"
+                    Command="{Binding GoToMonkeyDNPageCommand}" />
+
+            <Button x:Name="OpenLocalDbPage"
+                    Text="Open Local DB Page"
+                    HorizontalOptions="Center"
+                    Command="{Binding GoToLocalDbPageCommand}" />
 
         </VerticalStackLayout>
     </ScrollView>
